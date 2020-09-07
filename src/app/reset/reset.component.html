@@ -1,0 +1,55 @@
+ <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="false">
+<div class="">
+    <div class="form-group col-md-6">
+        <label> Enter Password</label>
+        <input type="text" class="form-control" #password="ngModel" name="password" [(ngModel)]="service.formData.password">
+    </div>
+    <div class="form-group col-md-6">
+        <label> Confirm Password</label>
+        <input type="text" class="form-control" #password1="ngModel" name="password1" [(ngModel)]="service.formData.password1">
+        <input type="hidden" class="form-control" #UserId="ngModel" name="UserId" [(ngModel)]="service.formData.UserId">
+        <input type="hidden" class="form-control" #token="ngModel" name="token" [(ngModel)]="service.formData.token">
+    </div>
+    	
+ </div>
+           <div class="form-group text-center col-sm-2 ">
+   			<button type="submit" class="btn btn-lg btn-block">Submit</button> 		
+       	</div>
+</form> 
+
+<!-- <div class="container">
+    <h1>Angular Validation Password and Confirm Password - ItSolutionStuff.com</h1>
+       
+    <form [formGroup]="form" (ngSubmit)="submit()">
+           
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+                formControlName="password"
+                id="password" 
+                type="password" 
+                class="form-control">
+            <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+                <div *ngIf="f.password.errors.required">Password is required.</div>
+            </div>
+        </div>
+  
+        <div class="form-group">
+            <label for="confirm_password">Confirm Password</label>
+            <input 
+                formControlName="confirm_password"
+                id="confirm_password" 
+                type="password" 
+                class="form-control">
+            <div *ngIf="f.confirm_password.touched && f.confirm_password.invalid" class="alert alert-danger">
+                <div *ngIf="f.confirm_password.errors.required">Password is required.</div>
+                <div *ngIf="f.confirm_password.errors.confirmedValidator">Password and Confirm Password must be match.</div>
+            </div>
+           <input type="text" class="form-control"  formControlName="UserId">
+        <input type="text" class="form-control"  formControlName="token" > 
+        </div>
+        
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+</div> -->
+

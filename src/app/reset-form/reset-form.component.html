@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Registration Form</h2>
+
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="text" formControlName="password" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input type="text" [class.is-invalid]="myForm.errors?.misMatch" formControlName="password1"  class="form-control">
+      <small class="text-danger error_message" *ngIf="myForm.errors?.misMatch">Passwords do not match</small>
+    </div>
+     <input type="text" [class.is-invalid]="myForm.errors?.misMatch" formControlName="UserId" class="form-control">
+      <input type="text" [class.is-invalid]="myForm.errors?.misMatch" formControlName="token" class="form-control">
+    <button class="btn btn-primary" [disabled]="!myForm.valid" type="submit">Change</button>
+     
+  </form>
+
+  {{myForm.status | json}}
+  {{myForm.value | json}}
+</div> 
+
+
+
+
+
+
+
